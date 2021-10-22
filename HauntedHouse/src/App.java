@@ -44,7 +44,7 @@ public class App extends Application
         GARAGE {
             @Override
             public Room next(){
-                return null;
+                return GARAGE;
             };
         };
         public Room next(){
@@ -54,7 +54,7 @@ public class App extends Application
     }
 
     public Stage hallway1(Stage stage){
-        
+        placeholder = Room.HALLWAY1;        
         Label label = new Label(exposition);
         label.setStyle(" -fx-background-color: white;");
 
@@ -86,8 +86,8 @@ public class App extends Application
                     popup.show(stage);
                 }
             });
-
-        Button[] doors = new Button[13];
+        int numDoors = 10;
+        Button[] doors = new Button[numDoors + 1];
         BackgroundImage myBI= new BackgroundImage(new Image("https://www.therpf.com/forums/attachments/9412a5bbd1d06b632ebfda1d0e9b02f2-jpg.1330635/",true), BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,BackgroundSize.DEFAULT);
         //then you set to your node
         GridPane pane = new GridPane();
@@ -99,12 +99,12 @@ public class App extends Application
 
         ImageView sciDoor = new ImageView(new Image("http://4.bp.blogspot.com/-dbUetHrbIEc/UWuMQSlYknI/AAAAAAAAAcU/QJ63pHSlq7c/s400/Door.png", false));
         
-        for(int i = 0; i <= 12; i++){
+        for(int i = 0; i <= numDoors; i++){
             sciDoor = new ImageView(new Image("http://4.bp.blogspot.com/-dbUetHrbIEc/UWuMQSlYknI/AAAAAAAAAcU/QJ63pHSlq7c/s400/Door.png", false));
             sciDoor.setFitHeight(100);
             sciDoor.setPreserveRatio(true);
-            Button button = new Button();
-            button.setPrefSize(100, 80);
+            Button button = new Button(placeholder.name());
+            //button.setPrefSize(100, 80);
             button.setGraphic(sciDoor);
             if(i < 6){
                 button.setTranslateY(100);
@@ -115,12 +115,14 @@ public class App extends Application
                 button.setTranslateX((150*i) - 900);
             }
             placeholder = placeholder.next();
+            button.setText(placeholder.name());
             button.setOnAction(new EventHandler<ActionEvent>() {
                     @Override
                     public void handle(ActionEvent event) {
                         switchStage(placeholder, stage);
                     }
-                });
+                }); 
+                
             doors[i] = button;
         }
 
