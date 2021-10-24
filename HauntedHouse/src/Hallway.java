@@ -118,12 +118,12 @@ public class Hallway extends Room{
 				};
 			}
 		);
-		ImageView conservatoryDoor = new ImageView(new Image("http://4.bp.blogspot.com/-dbUetHrbIEc/UWuMQSlYknI/AAAAAAAAAcU/QJ63pHSlq7c/s400/Door.png", false));
-		conservatoryDoor.setOnMouseClicked(
+		ImageView basementDoor = new ImageView(new Image("http://4.bp.blogspot.com/-dbUetHrbIEc/UWuMQSlYknI/AAAAAAAAAcU/QJ63pHSlq7c/s400/Door.png", false));
+		basementDoor.setOnMouseClicked(
 			new EventHandler<MouseEvent>(){
 				@Override
 				public void handle(MouseEvent arg0) {
-					house.currentRoom = house.conservatory;
+					house.currentRoom = house.basement;
 					house.app.refresh();
 				};
 			}
@@ -145,11 +145,10 @@ public class Hallway extends Room{
 		pane.add(masterBath, 2, 1);
 		pane.add(denDoor, 3, 1);
 		pane.add(diceRoom, 4, 1);
-		pane.add(landingRoom, 0, 2);
-		pane.add(guestBed, 1, 2);
-		pane.add(guestBath, 2, 2);
-		pane.add(conservatoryDoor, 3, 2);
-		pane.add(garageDoor, 4, 2);
+		pane.add(guestBed, 0, 2);
+		pane.add(guestBath, 1, 2);
+		pane.add(basementDoor, 2, 2);
+		pane.add(garageDoor, 3, 2);
 
 
 
