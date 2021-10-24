@@ -19,10 +19,10 @@ public class Den extends Room {
         GridPane pane = new GridPane();
         BackgroundImage myBI = new BackgroundImage(new Image(
                 "https://insidethemagic.net/wp-content/uploads/2017/02/cover-800x400.jpg"
-                true), BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,
+                , true), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,
                 BackgroundSize.DEFAULT);
         pane.setBackground(new Background(myBI));
-        
+
 		return pane;
 	}
 }

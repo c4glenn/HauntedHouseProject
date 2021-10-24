@@ -44,7 +44,7 @@ public class Garage extends Room{
         Label gueses = new Label("0/3 Guesses");
         gueses.setStyle(" -fx-background-color: white;");
 
-
+ 
         TextField tf = new TextField();
 
         

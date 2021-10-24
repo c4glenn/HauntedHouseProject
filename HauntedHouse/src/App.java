@@ -1,11 +1,14 @@
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Region;
 import javafx.stage.Stage;
 
 /**
@@ -52,7 +55,13 @@ public class App extends Application {
     }
 
     public void dead(){
-        
+        Alert a = new Alert(Alert.AlertType.ERROR);
+				a.setHeaderText("DEAD");
+                a.setContentText("Sadly you died :(");
+				a.setResizable(true);
+				a.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
+			a.showAndWait();
+        Platform.exit();
     } 
 
 
@@ -100,7 +109,7 @@ public class App extends Application {
      * pane.setBackground(new Background(myBI));
      * 
      * ImageView sciDoor = new ImageView(new Image(
-     * "http://4.bp.blogspot.com/-dbUetHrbIEc/UWuMQSlYknI/AAAAAAAAAcU/QJ63pHSlq7c/s400/Door.png",
+     * "http://4.bp.blogspot.com/-dbUetHrbIEc/UWuMQSYknI/AAAAAAAAAcU/QJ63pHSlq7c/s400/Door.png",
      * false));
      * 
      * for(int i = 0; i <= numDoors; i++){ sciDoor = new ImageView(new Image(
