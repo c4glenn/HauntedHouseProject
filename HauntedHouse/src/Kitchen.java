@@ -52,7 +52,7 @@ public class Kitchen extends Room {
                             "The cupcakes are delicious, and vader gives you his light saber for trusting him");
                     b.setResizable(true);
                     b.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
-                    b.show();
+                    b.showAndWait();
                     house.app.refresh();
 
                 } else {
@@ -62,7 +62,7 @@ public class Kitchen extends Room {
                             "I find you lack of desire for cupcakes disturbing -- Vader force Chokes you");
                     b.setResizable(true);
                     b.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
-                    b.show();
+                    b.showAndWait();
                     house.app.dead();
                 }
             };
@@ -84,7 +84,7 @@ public class Kitchen extends Room {
                             "I tire of this game -- Vader force Chokes you");
                     b.setResizable(true);
                     b.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
-                    b.show();
+                    b.showAndWait();
                     house.app.dead();
             } else {
                 Alert b = new Alert(Alert.AlertType.INFORMATION);
@@ -93,7 +93,7 @@ public class Kitchen extends Room {
                             "Vader Blocks your Shot");
                     b.setResizable(true);
                     b.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
-                    b.show();
+                    b.showAndWait();
             }
         } else if(item.equals("Luke's Lightsaber")){
             if(house.gaw.trained){
@@ -102,7 +102,7 @@ public class Kitchen extends Room {
                     b.setContentText("You best vader");
                     b.setResizable(true);
                     b.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
-                    b.show();
+                    b.showAndWait();
             } else {
                 Alert b = new Alert(Alert.AlertType.INFORMATION);
                     b.setHeaderText("Angery Vader");
@@ -110,7 +110,7 @@ public class Kitchen extends Room {
                             "Vader kills you easily");
                     b.setResizable(true);
                     b.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
-                    b.show();
+                    b.showAndWait();
                     house.app.dead();
             }
 

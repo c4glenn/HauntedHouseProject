@@ -6,6 +6,7 @@ import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Region;
@@ -38,7 +39,7 @@ public class App extends Application {
             pane.setCenter(house.getPane());
             pane.setBottom(house.gaw.hud());
 
-            Scene scene = new Scene(pane, 1000, 800);
+            Scene scene = new Scene(pane, 1000, 600);
             stage.setTitle("Starwars Haunted House");
             stage.setScene(scene);
             stage.show();
@@ -55,13 +56,19 @@ public class App extends Application {
     }
 
     public void dead(){
-        Alert a = new Alert(Alert.AlertType.ERROR);
+        Alert a = new Alert(Alert.AlertType.CONFIRMATION);
 				a.setHeaderText("DEAD");
-                a.setContentText("Sadly you died :(");
+                a.setContentText("Sadly you died :( Would you like to play again?");
 				a.setResizable(true);
 				a.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
 			a.showAndWait();
-        Platform.exit();
+            if (a.getResult() == ButtonType.OK) {
+               house = new House(this);
+               refresh();
+            } else {
+                Platform.exit();
+            }
+        
     } 
 
 
@@ -338,14 +345,14 @@ public class App extends Application {
      * @param stage the primary stage for this application.
      *//*
         * @Override public void start(Stage stage) { switch (roomNum){ case HALLWAY1:
-        * hallway1(stage).show(); break; case MASTER: master(stage).show(); break; case
-        * MASTER_BATH: mBath(stage).show(); break; case BASEMENT:
-        * basement(stage).show(); break; case DEN: den(stage).show(); break; case
-        * GUEST_BED: guestBed(stage).show(); break; case GUEST_BATH:
-        * guestBath(stage).show(); break; case CONSERVATORY:
-        * conservatory(stage).show(); break; case DICE_ROOM: diceRoom(stage).show();
-        * break; case LANDING_ROOM: landingRoom(stage).show(); break; case GARAGE:
-        * garage(stage).show(); break; default: stage.show(); break; }
+        * hallway1(stage).showAndWait(); break; case MASTER: master(stage).showAndWait(); break; case
+        * MASTER_BATH: mBath(stage).showAndWait(); break; case BASEMENT:
+        * basement(stage).showAndWait(); break; case DEN: den(stage).showAndWait(); break; case
+        * GUEST_BED: guestBed(stage).showAndWait(); break; case GUEST_BATH:
+        * guestBath(stage).showAndWait(); break; case CONSERVATORY:
+        * conservatory(stage).showAndWait(); break; case DICE_ROOM: diceRoom(stage).showAndWait();
+        * break; case LANDING_ROOM: landingRoom(stage).showAndWait(); break; case GARAGE:
+        * garage(stage).showAndWait(); break; default: stage.showAndWait(); break; }
         * 
         * }
         * 

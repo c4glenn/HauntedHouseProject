@@ -27,7 +27,7 @@ public class Master extends Room {
                 a.setContentText("The Ewoks eat you alive");
                 a.setResizable(true);
                 a.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
-                a.show();
+                a.showAndWait();
                 house.app.dead();
     }
 
@@ -54,7 +54,7 @@ public class Master extends Room {
                 a.setContentText("The Ewoks eat you alive");
                 a.setResizable(true);
                 a.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
-                a.show();
+                a.showAndWait();
                 house.app.dead();
             }
         });
@@ -74,7 +74,7 @@ public class Master extends Room {
                 a.setContentText("On a whim you decide to throw one of George Lucas’ chew toys and the ewoks dive on it and chew it vigorously. While they are distracted you grab Han Solo’s blaster and limp back into the hallway, wounded but alive");
                 a.setResizable(true);
                 a.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
-                a.show();
+                a.showAndWait();
                 house.gaw.health -= 1;
                 house.gaw.collectedBlaster = true;
                 house.currentRoom = house.hallway;

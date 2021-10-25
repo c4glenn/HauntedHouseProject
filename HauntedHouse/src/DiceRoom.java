@@ -56,7 +56,7 @@ public class DiceRoom extends Room {
                                 "He nods in good will and tells you 'sometimes being negative will get you through when it seems imposible to guess'");
                         b.setResizable(true);
                         b.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
-                        b.show();
+                        b.showAndWait();
                         house.currentRoom = house.hallway;
                         house.app.refresh();
 
@@ -66,7 +66,7 @@ public class DiceRoom extends Room {
                         b.setContentText("Boba fett shakes his head in disapointment and kicks you out of his room");
                         b.setResizable(true);
                         b.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
-                        b.show();
+                        b.showAndWait();
                         house.currentRoom = house.hallway;
                         house.app.refresh();
 

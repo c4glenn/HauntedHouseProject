@@ -10,7 +10,7 @@ public abstract class Room{
         public void useItem(String item){
                 Alert a = new Alert(Alert.AlertType.ERROR);
                 a.setContentText("You can't use " + item + " here");
-                a.show();
+                a.showAndWait();
         }
 
         abstract Pane display();

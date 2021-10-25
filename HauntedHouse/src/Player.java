@@ -25,7 +25,7 @@ public class Player {
     boolean vaderLightsaber = false;
     boolean trooperArmor = false;
     boolean hasKey = false;
-    boolean hasWrench = true;
+    boolean hasWrench = false;
     boolean lukeLightsaber = false;
     boolean trained = false;
     boolean hasLadder = false;
